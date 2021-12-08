@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 
 
@@ -23,12 +23,19 @@
         </div>
     </header>
     <main>
-        <Section>
-            <div>
-                <h2>Cadastrar Consulta</h1>
-            </div>
-            <section>
+        <Section class="containerTudo" >
+            <div class="containerCadastroLista" >
+
                 <div>
+                    <h2>Cadastrar Consulta</h1>
+                </div>
+                <div>
+                    <h2>Lista Consultas</h2>
+                </div>
+            </div>
+
+            <section class="inputsTabela  containerCadastroLista">
+                <div >
                     <form>
                        <div class="partLogin">
                         <input class="inputsLogin" placeholder="Nome do Paciente" type="text" >
@@ -39,10 +46,26 @@
                        <div class="partLogin">
                         <input class="inputsLogin" placeholder="Descrição" type="text" >
                        </div>
+                       <div>
+                        <button class="btnCadastrar partLogin botaoCadastrar " id="btnCadastrar">Cadastrar</button>
+                       </div>
                     </form>
                 </div>
-    
+                <div class="listagem">
+                    <table id="tabelaListagem">
+                        <thead>
+                            <tr>
+                              <th>Descrição</th>
+                              <th>Paciente</th>
+                              <th>Médico</th>
+                              <th>Data</th>
+                              <th>Instituição</th>
+                            </tr>
+                          </thead>
+                    </table>
+                </div>
             </section>
+            
 
         </Section>
     </main>
