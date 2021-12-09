@@ -2,7 +2,7 @@
 
 /* Home */
 
-* {
+* { 
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
@@ -210,8 +210,13 @@ footer{
 
 /* ConsultaAdm */
 
+.containerTudo{
+    align-items: center;
+}
+
 .listagem{
-    width: 259px;
+    display: flex;
+    align-self: center;
 }
 
 .containerTudo{
@@ -223,8 +228,8 @@ footer{
 .containerCadastroLista{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 659px;
+    justify-content: space-evenly;
+    width: 100%;
 
   
 }
@@ -259,24 +264,20 @@ footer{
 }
 
 #tabelaListagem{
-    font-weight: lighter;
-    border-collapse: collapse;
-    width: 100%;
-    white-space: nowrap;
+    width: 200px;
+    height: 300px;
     font-size: 12px;
-    margin-bottom: 13vw;
-}
-
-#tabelaListagem th {
     text-align: left;
     border: 1px solid #f6f6f6;
     padding: 8px;
-  
-
-
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
     background-color: #1EE7BE;
     color: white;
-  }
+    border-radius: 12px;
+}
+
+#tabelaListagem li{
+    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
