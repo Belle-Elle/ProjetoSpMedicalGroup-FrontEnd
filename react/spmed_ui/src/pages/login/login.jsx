@@ -14,7 +14,26 @@ export default class login extends Component {
     }
 
     efetuarlogin = () => {
-        axios.post("")
+        axios.post("http://localhost:5000/api/Login", {
+            email: this.state.email,
+            senha: this.state.senha,
+        })
+
+        .then(response => {
+
+           if (response.status === 200) {
+
+                localStorage.setItem('usuario-login', response.data.token)
+                
+                console.log('Meu token é: ' + response.data.token)
+            }
+        })
+    };
+
+
+
+    atualizaState = (campo) => {
+        this.setState({[campo.target.name]: campo.target.value});
     }
 
     render() {
