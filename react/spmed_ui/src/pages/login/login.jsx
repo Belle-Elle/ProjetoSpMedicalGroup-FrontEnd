@@ -10,10 +10,15 @@ export default class login extends Component {
         this.state = {
             email: '',
             senha: '',
+            erroMensagem: ''
+            // isLoading: false
         };
     }
 
     efetuarlogin = () => {
+        this.setState({erroMensagem : '', isLoading : true })
+
+
         axios.post("http://localhost:5000/api/Login", {
             email: this.state.email,
             senha: this.state.senha,
@@ -27,6 +32,10 @@ export default class login extends Component {
                 
                 console.log('Meu token é: ' + response.data.token)
             }
+        })
+
+        .catch(() =>  {
+              this.setState({erroMensagem : 'E-mail ou senha invalidos ' })
         })
     };
 
@@ -58,6 +67,9 @@ export default class login extends Component {
                                 <div className="partLogin">
                                     <input className="inputsLogin" placeholder="Senha" type="password" name="password"></input>
                                 </div>
+
+                                <p style={{color : 'red'}}>{this.state.erroMensagem}</p>
+
                                 <div className="partLogin">
                                     <button className="botaoLogin" id="btn_Login">Login</button>
                                 </div>
