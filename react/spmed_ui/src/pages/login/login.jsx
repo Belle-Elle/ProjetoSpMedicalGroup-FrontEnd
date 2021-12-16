@@ -1,14 +1,18 @@
-import axios from "axios";
 import { Component } from "react";
+import axios from "axios";
+
 import "../../assets/css/estilo.css"
+
 import bannerlogin from "../../assets/img/Frame5.png"
 import logologin from "../../assets/img/Rectangle15.png"
+
+import { parseJwt, usuarioAutenticado } from "../../sevices/auth"
 
 export default class login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: 'ricardo.lemos@spmedicalgroup.com.br',
+            email: 'adm@adm.com',
             senha: '11111111',
             erroMensagem: '',
             isLoading: false
@@ -35,6 +39,11 @@ export default class login extends Component {
                 console.log('Meu token é: ' + response.data.token)
 
                 this.setState({ isLoading : false})
+
+                if (parseJwt().role === '1') {
+                    this.props.history.push('/consultasadm');
+                    console.log('estou logado: ' + usuarioAutenticado());
+                }
             }
         })
 
