@@ -22,7 +22,7 @@ export default class login extends Component {
     efetuarlogin = (evento) => {
         evento.preventDefault();
         this.setState({erroMensagem : '', isLoading : true })
-        console.log(this.state.email + "+" + this.state.senha)
+        console.log(this.state.email + " " + this.state.senha)
 
 
         axios.post("http://localhost:5000/api/Login", {
