@@ -38,7 +38,10 @@ export default class login extends Component {
                 
                 console.log('Meu token é: ' + response.data.token)
 
-                this.setState({ isLoading : false})
+                this.setState({ isLoading : true})
+
+                let base64 = localStorage.getItem('usuario-login').split('.')[1];
+                console.log(base64);
 
                 if (parseJwt().role === '1') {
                     this.props.history.push('/consultasadm');
@@ -47,9 +50,9 @@ export default class login extends Component {
             }
         })
 
-        .catch(() =>  {
-              this.setState({erroMensagem : 'E-mail ou senha invalidos ', isLoading :false })
-        })
+         .catch(() =>  {
+               this.setState({erroMensagem : 'E-mail ou senha invalidos ', isLoading :false })
+         })
     };
 
 
